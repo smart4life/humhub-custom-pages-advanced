@@ -1,0 +1,25 @@
+{
+    "id": "custom-pages-advanced",
+    "name": "Custom Pages Advanced",
+    "description": "",
+    "keywords": [],
+    "version": "0.1",
+    "humhub": {
+        "minVersion": "1.12"
+    },
+    "homepage": "https://github.com/mybionatics/humhub-modules-custom-pages-advanced",
+    "authors": [
+        {
+            "name": "Marc Farré",
+            "homepage": "https://cuzy.app",
+            "role": "Developer"
+        },
+        {
+            "name": "Sébastien Mennetrier",
+            "homepage": "https://mybionatics.com/",
+            "role": "Developer"
+        }
+    ],
+    "screenshots": [
+    ]
+}
