@@ -8,7 +8,7 @@
 namespace humhub\modules\customPagesAdvanced\controllers;
 
 use humhub\modules\admin\components\Controller;
-use humhub\modules\admin\permissions\ManageModules;
+use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\custom_pages\permissions\ManagePages;
 use humhub\modules\customPagesAdvanced\models\AdvancedPage;
 use humhub\modules\user\models\Group;
@@ -29,7 +29,7 @@ class PageController extends Controller
     public function getAccessRules()
     {
         return [
-            ['permissions' => [ManageModules::class, ManagePages::class]]
+            ['permissions' => [ManageSettings::class, ManagePages::class]]
         ];
     }
 
@@ -55,7 +55,7 @@ class PageController extends Controller
             $this->redirect(['index']);
         }
 
-        foreach (Group::find()->all() as $group) {
+        foreach (Group::find()->each() as $group) {
             $availableGroups[$group->id] = $group['name'];
         }
 

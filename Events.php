@@ -8,7 +8,7 @@
 namespace humhub\modules\customPagesAdvanced;
 
 
-use humhub\modules\admin\permissions\ManageModules;
+use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\admin\widgets\AdminMenu;
 use humhub\modules\custom_pages\helpers\Url;
 use humhub\modules\custom_pages\models\Page;
@@ -35,7 +35,7 @@ class Events
         /** @var Module $module */
         $module = Yii::$app->getModule('custom-pages-advanced');
 
-        if (!Yii::$app->user->can([ManageModules::class, ManagePages::class])) {
+        if (!Yii::$app->user->can([ManageSettings::class, ManagePages::class])) {
             return;
         }
 
