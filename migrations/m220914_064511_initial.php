@@ -1,6 +1,6 @@
 <?php
 
-use yii\db\Migration;
+use humhub\components\Migration;
 
 /**
  * Class m220914_064511_initial
@@ -12,7 +12,7 @@ class m220914_064511_initial extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('custom_pages_advanced_page', [
+        $this->safeCreateTable('custom_pages_advanced_page', [
             'id' => $this->primaryKey(),
             'custom_pages_page_id' => $this->integer(11)->notNull(),
             'new_target' => $this->string(255),
@@ -24,9 +24,9 @@ class m220914_064511_initial extends Migration
         ], '');
 
         // Add indexes on columns for speeding where operations ; false if values (or values combinaisons if several columns) are not unique
-        $this->createIndex('idx-custom_pages_advanced_page', 'custom_pages_advanced_page', ['custom_pages_page_id'], true);
+        $this->safeCreateIndex('idx-custom_pages_advanced_page', 'custom_pages_advanced_page', ['custom_pages_page_id'], true);
         // Add foreign keys (if related to a table, when deleted in this table, related rows are deleted to, but beforeDelete() and afterDelete() are not called)
-        $this->addForeignKey('fk-custom_pages_advanced_page-custom_pages_page', 'custom_pages_advanced_page', 'custom_pages_page_id', '`custom_pages_page`', 'id', 'CASCADE');
+        $this->safeAddForeignKey('fk-custom_pages_advanced_page-custom_pages_page', 'custom_pages_advanced_page', 'custom_pages_page_id', '`custom_pages_page`', 'id', 'CASCADE');
     }
 
     /**
@@ -38,19 +38,4 @@ class m220914_064511_initial extends Migration
 
         return false;
     }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m220914_064511_initial cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }

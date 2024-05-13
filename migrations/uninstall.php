@@ -1,13 +1,13 @@
 <?php
 
-use yii\db\Migration;
+use humhub\components\Migration;
 
 class uninstall extends Migration
 {
 
     public function up()
     {
-        $this->dropTable('custom_pages_advanced_page');
+        $this->safeDropTable('custom_pages_advanced_page');
     }
 
     public function down()
