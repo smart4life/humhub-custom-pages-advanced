@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Pages Advanced
  * @link https://github.com/smart4life/humhub-custom-pages-advanced
@@ -16,7 +17,6 @@ use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
-
 /**
  * ConfigController is the module form configuration
  * For administrators only
@@ -29,7 +29,7 @@ class PageController extends Controller
     public function getAccessRules()
     {
         return [
-            ['permissions' => [ManageSettings::class, ManagePages::class]]
+            ['permissions' => [ManageSettings::class, ManagePages::class]],
         ];
     }
 
@@ -48,8 +48,8 @@ class PageController extends Controller
      */
     public function actionCustomPage($pageId)
     {
-        $model = AdvancedPage::findOne(['custom_pages_page_id' => $pageId]) ??
-            new AdvancedPage(['custom_pages_page_id' => $pageId]);
+        $model = AdvancedPage::findOne(['custom_pages_page_id' => $pageId])
+            ?? new AdvancedPage(['custom_pages_page_id' => $pageId]);
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->save()) {
             $this->view->saved();
             $this->redirect(['index']);

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Pages Advanced
  * @link https://github.com/smart4life/humhub-custom-pages-advanced

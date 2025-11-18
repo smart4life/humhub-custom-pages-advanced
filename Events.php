@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Pages Advanced
  * @link https://github.com/smart4life/humhub-custom-pages-advanced
@@ -6,7 +7,6 @@
  */
 
 namespace humhub\modules\customPagesAdvanced;
-
 
 use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\admin\widgets\AdminMenu;
