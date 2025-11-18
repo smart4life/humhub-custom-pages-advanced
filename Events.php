@@ -62,8 +62,8 @@ class Events
 
                 // Check if the user is member of a group allowed for this page
                 $userIsAllowed = false;
-                foreach ($user->getSearchAttributes()['groups'] as $groupId) {
-                    if (in_array($groupId, $advancedPage->allowed_group_ids)) {
+                foreach ($user->getGroups()->column() as $groupId) {
+                    if (in_array($groupId, $advancedPage->allowed_group_ids, true)) {
                         $userIsAllowed = true;
                         break;
                     }
