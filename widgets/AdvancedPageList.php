@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Pages Advanced
  * @link https://github.com/smart4life/humhub-custom-pages-advanced
@@ -6,7 +7,6 @@
  */
 
 namespace humhub\modules\customPagesAdvanced\widgets;
-
 
 use humhub\modules\custom_pages\interfaces\CustomPagesService;
 use humhub\modules\custom_pages\models\Page;
@@ -30,8 +30,8 @@ class AdvancedPageList extends TargetPageList
         $dataProvider = new ActiveDataProvider([
             'query' => $customPagesService->findContentByTarget($this->target->id, $this->pageType, $this->target->container),
             'pagination' => [
-                'pageSize' => 20
-            ]
+                'pageSize' => 20,
+            ],
         ]);
 
         return $this->render('advancedPageList', ['target' => $this->target, 'dataProvider' => $dataProvider, 'pageType' => $this->pageType]);

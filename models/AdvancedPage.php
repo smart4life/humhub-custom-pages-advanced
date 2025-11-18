@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Pages Advanced
  * @link https://github.com/smart4life/humhub-custom-pages-advanced
@@ -89,9 +90,9 @@ class AdvancedPage extends ActiveRecord
      */
     protected function jsonDecodeAttr()
     {
-        $this->allowed_group_ids = is_array($this->allowed_group_ids) ?
-            $this->allowed_group_ids :
-            (array)Json::decode($this->allowed_group_ids);
+        $this->allowed_group_ids = is_array($this->allowed_group_ids)
+            ? $this->allowed_group_ids
+            : (array)Json::decode($this->allowed_group_ids);
     }
 
     /**
@@ -99,9 +100,9 @@ class AdvancedPage extends ActiveRecord
      */
     protected function jsonEncodeAttr()
     {
-        $this->allowed_group_ids = is_array($this->allowed_group_ids) ?
-            Json::encode($this->allowed_group_ids) :
-            $this->allowed_group_ids;
+        $this->allowed_group_ids = is_array($this->allowed_group_ids)
+            ? Json::encode($this->allowed_group_ids)
+            : $this->allowed_group_ids;
     }
 
     /**

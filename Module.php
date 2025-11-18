@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Pages Advanced
  * @link https://github.com/smart4life/humhub-custom-pages-advanced
@@ -14,7 +15,6 @@ use yii\helpers\Url;
 
 class Module extends \humhub\components\Module
 {
-
     /**
      * @var string defines the icon
      */
@@ -32,7 +32,7 @@ class Module extends \humhub\components\Module
     public function getConfigUrl()
     {
         return Url::to([
-            '/custom-pages-advanced/page'
+            '/custom-pages-advanced/page',
         ]);
     }
 
